@@ -7,7 +7,9 @@
             [taoensso.timbre :as timbre]
             [taoensso.timbre.appenders.rotor :as rotor]
             [selmer.parser :as parser]
-            [environ.core :refer [env]]))
+            [environ.core :refer [env]])
+  (:import (opennlp.tools.doccat DocumentSample)
+           (opennlp.tools.util ObjectStream)))
 
 (defroutes app-routes
   (route/resources "/")
