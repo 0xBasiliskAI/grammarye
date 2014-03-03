@@ -9,17 +9,13 @@
                  [com.taoensso/timbre "3.0.0"]
                  [com.taoensso/tower "2.0.1"]
                  [markdown-clj "0.9.41"]
-                 [environ "0.4.0"]]
+                 [environ "0.4.0"]
+                 [com.cemerick/austin "0.1.4"]]
 
   :repl-options {:init-ns grammarye.repl}
   :plugins [[lein-ring "0.8.10"]
-            [lein-environ "0.4.0"]
-            [lein-cljsbuild "0.3.0"]]
-  :hooks [leiningen.cljsbuild]
-  :cljsbuild
-  {:builds [{:source-paths ["src-cljs"]
-           :compiler {:output-to "resources/public/js/site.js"
-                      :optimizations :advanced}}]}
+            [lein-environ "0.4.0"]]
+
   :ring {:handler grammarye.handler/app
          :init    grammarye.handler/init
          :destroy grammarye.handler/destroy}
