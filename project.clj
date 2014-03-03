@@ -10,7 +10,8 @@
                  [com.taoensso/tower "2.0.1"]
                  [markdown-clj "0.9.41"]
                  [environ "0.4.0"]
-                 [com.cemerick/austin "0.1.4"]]
+                 [com.cemerick/austin "0.1.4"]
+                 [org.apache.opennlp/opennlp-tools "1.5.3"]]
 
   :repl-options {:init-ns grammarye.repl}
   :plugins [[lein-ring "0.8.10"]
