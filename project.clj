@@ -13,7 +13,13 @@
 
   :repl-options {:init-ns grammarye.repl}
   :plugins [[lein-ring "0.8.10"]
-            [lein-environ "0.4.0"]]
+            [lein-environ "0.4.0"]
+            [lein-cljsbuild "0.3.0"]]
+  :hooks [leiningen.cljsbuild]
+  :cljsbuild
+  {:builds [{:source-paths ["src-cljs"]
+           :compiler {:output-to "resources/public/js/site.js"
+                      :optimizations :advanced}}]}
   :ring {:handler grammarye.handler/app
          :init    grammarye.handler/init
          :destroy grammarye.handler/destroy}
